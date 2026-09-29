@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fef9f9">
+  <title>FigLeaf — Password Maker</title>
+  <link rel="icon" href="assets/figleaf.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="falling-leaves" aria-hidden="true"></div>
+  <main class="app">
+    <header class="brand">
+      <img class="logo" src="assets/figleaf.png" alt="FigLeaf logo">
+      <h1>FigLeaf</h1>
+      <p>A tiny, friendly password maker <span class="tagline-symbol">𖧧</span></p>
+    </header>
+    <section class="card" aria-label="Password generator">
+      <div class="password-box"><output id="password" aria-live="polite"></output></div>
+      <div class="actions">
+        <button id="copy" class="copy" type="button"><span aria-hidden="true">▢</span> <span id="copy-text">Copy</span></button>
+        <button id="generate" class="generate" type="button"><span aria-hidden="true">⟳</span> Generate</button>
+      </div>
+      <div class="strength">
+        <div class="strength-label"><span>Strength</span><strong id="strength-text"></strong></div>
+        <div class="meter" id="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="length-row"><label for="length">Length</label><output id="length-value" for="length">16</output></div>
+      <input id="length" type="range" min="8" max="32" value="16">
+      <div class="options">
+        <label>Uppercase (A-Z)<input id="uppercase" type="checkbox" role="switch" checked><span class="switch"></span></label>
+        <label>Lowercase (a-z)<input id="lowercase" type="checkbox" role="switch" checked><span class="switch"></span></label>
+        <label>Numbers (0-9)<input id="numbers" type="checkbox" role="switch" checked><span class="switch"></span></label>
+        <label>Symbols (!@#$)<input id="symbols" type="checkbox" role="switch" checked><span class="switch"></span></label>
+      </div>
+    </section>
+    <footer>✧ Made for my portfolio</footer>
+  </main>
+</body>
+</html>
